@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+    background-color: aquamarine;
+    border: dotted;
+    border-color: blue
+}
+
+#UserName {
+    font-family: cursive;
+    text-decoration-color: blue;
+    color: blue;
+}
+
+#LoginButton {
+    font-family: cursive;
+    text-decoration-color: blue;
+    color: blue;
+}
