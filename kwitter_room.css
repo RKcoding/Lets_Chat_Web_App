@@ -5,13 +5,30 @@ body {
     border-color: blue
 }
 
-#UserName {
+#Roomname {
     font-family: cursive;
     text-decoration-color: blue;
     color: blue;
 }
 
-#LoginButton {
+#LogoutButton {
+    font-family: cursive;
+    text-decoration-color: blue;
+    color: blue;
+}
+
+#AddroomButton {
+    font-family: cursive;
+    text-decoration-color: blue;
+    color: blue;
+}
+
+label {
+    font-family: cursive;
+    color: blue;
+}
+
+#UserNameLoggedIn {
     font-family: cursive;
     text-decoration-color: blue;
     color: blue;
