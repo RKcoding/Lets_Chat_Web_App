@@ -34,7 +34,7 @@ label {
     color: blue;
 }
 
-h1 {
+h1, h3 {
     font-family: cursive;
     color: blue;
 }

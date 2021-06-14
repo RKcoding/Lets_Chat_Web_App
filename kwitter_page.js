@@ -10,21 +10,13 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-function logout() {
-    window.location = "kwitter.html";
-}
-
-user_name = localStorage.getItem("User_Name_Logged_In");
+user_name = localStorage.getItem("UserNameLoggedIn");
 room_name = localStorage.getItem("Roomname");
 
-function send() {
-    msg = document.getElementById("message_input").value;
-    firebase.database().ref(room_name).push({
-        name: user_name,
-        message: msg,
-        like: 0
-    });
-    document.getElementById("message_input").value = "";
+function send() { 
+      msg = document.getElementById("message_input").value; 
+      firebase.database().ref(room_name).push({ name: user_name, message: msg, like: 0 }); 
+      document.getElementById("message_input").value = ""; 
 }
 
 function getData() {
@@ -59,8 +51,9 @@ function updateLike(message_id) {
       firebase.database().ref(room_name).child(message_id).update({ like: updated_likes });
 }
                                 
-function logout() {
+function logOut() {
     localStorage.removeItem("User_Name_Logged_In");
      localStorage.removeItem("Roomname");
-     window.location("kwitter.html");
+     window.location.replace("kwitter.html");
+
 }

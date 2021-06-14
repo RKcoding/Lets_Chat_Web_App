@@ -10,48 +10,42 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-User_Name_Logged_In = localStorage.getItem("UserNameLoggedIn");
 
-UserName = localStorage.getItem("UserName");
+user_name = localStorage.getItem("user_name");
 
-document.getElementById("UserNameLoggedIn").innerHTML = "Welcome " + UserName + "!";
-
-function addroom() {
-    Room_name = document.getElementById("Roomname").value;
-
-    firebase.database().ref("/").child(Room_name).update({
-        purpose: "adding room name"
-    });
-
-    localStorage.setItem("Roomname", Room_name);
-
-    window.location = "kwitter_page.html";
-}
+document.getElementById("user_name").innerHTML = user_name;
 
 function getData() {
-    firebase.database().ref("/").on('value',
-        function (snapshot) {
-            document.getElementById("output").innerHTML =
-                "";
-            snapshot.forEach(function (childSnapshot) {
-                childKey =
-                    childSnapshot.key;
-                Room_names = childKey;
-                //Start code
-                Result = "<div class = 'room_name' id=" + Room_names + "onclick= 'redirectToRoomName(this.id)'>#" + Room_names + "</div><hr>";
-                document.getElementById("output").innerHTML = Result
-                //End code
-            });
-        });
+  firebase.database().ref("/").on('value', function (snapshot) {
+    document.getElementById("output").innerHTML = ""; snapshot.forEach(function (childSnapshot) {
+      childKey = childSnapshot.key;
+      room_names = childKey;
+      row = "<div class = 'room_name' id = "+ room_names+" onclick = 'redirecttoroomname(this.id)'>#"+ room_names + "</div>"
+      document.getElementById("output").innerHTML += row;
+    })
+  })
 }
 getData();
+      function addRoom() {
+        room_name = document.getElementById("room_name").value;
 
-function redirecttoroomname(name) {
-    console.log(name);
-    localStorage.setItem("Roomname", name);
-    window.location = "kwitter.html";
-}
+        firebase.database().ref("/").child(room_name).update({ purpose: "adding room name" });
 
-function logout() {
-    window.location = "kwitter.html";
-}
+        localStorage.setItem("room_name", room_name);
+
+        window.location = "kwitter_page.html";
+      }
+
+      function redirecttoroomname(name) {
+        console.log(name);
+        localStorage.setItem("room_name", name);
+        window.location = "kwitter_page.html";
+      }
+
+      function logout() {
+        localStorage.removeItem("user_name");
+        localStorage.removeItem("room_name");
+          window.location = "kwitter.html";
+      }
+
+     

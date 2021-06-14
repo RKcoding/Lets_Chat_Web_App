@@ -4,29 +4,29 @@
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <link rel="stylesheet" href="kwitter_room.css">
 </head>
+<button onclick="logout()" id="LogoutButton"> Logout </button>
 
 <body>
-    <button id="LogoutButton" class="btn btn-primary" onclick="logout()"> Log out </button>
-    <h1> Kwitter </h1>
-    <br>
+    <center>
+        <h1 class="header"> Let's Chat!</h1>
+        <h3 id="UserNameLoggedIn"></h3>
+        <div>
+            <label>#Add Room:</label>
+            <br>
+            <br>
+            <input type="text" id="Roomname" class="form-control" placeholder="#Room Name">
+        </div>
+        <br>
+        <button onclick="addRoom();" id="AddroomButton" class="btn btn-success">#Add Room</button>
 
-    <label id="UserNameLoggedIn"> </label>
-    <br>
-    <br>
-    <input type="text" placeholder="Room Name" id="Roomname">
-    <br>
-    <br>
+        <h3 class="color_white"> #TRENDINGROOMS </h3>
 
+        <div id="output"></div>
 
-    <button id="AddroomButton" class="btn btn-primary" onclick="addroom()"> #AddRoom </button>
-    <br>
-    <br>
-    <div id="output">
-        <label> #TrendingRooms </label>
-    </div>
-</body>
-<link rel="stylesheet" type="text/css" href="kwitter_room.css">
-<script src="kwitter_room.js"></script>
+    </center>
 
-</html>
+    <script src="kwitter_room.js"></script>
+
+</body></html>

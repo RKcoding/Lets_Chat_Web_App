@@ -17,7 +17,17 @@ body {
     color: blue;
 }
 
-h1 {
+h1, h2 {
     font-family: cursive;
+    text-decoration-color: blue;
     color: blue;
+}
+.login_div
+{
+	background: skyblue;float: none;border-radius: 65px;
+}
+
+#user_name {
+    width: 50%;
+    height: 30;
 }
